@@ -8,7 +8,7 @@ import (
 	"dw1.io/crlfuzz/pkg/request"
 )
 
-// Scan will scanning for CRLF vulnerability againts target
+// Scan will scanning for CRLF vulnerability against target
 func Scan(url string, method string, data string, headers []string, proxy string) (bool, error) {
 	client := request.Client(proxy)
 	req, e := http.NewRequest(method, url, strings.NewReader(data))
