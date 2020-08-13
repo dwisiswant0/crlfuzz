@@ -1,0 +1,56 @@
+package runner
+
+import (
+	"io/ioutil"
+	"net/url"
+	"os"
+
+	"dw1.io/crlfuzz/pkg/errors"
+)
+
+func (o *Options) validate() {
+	if isStdin() {
+		b, e := ioutil.ReadAll(os.Stdin)
+		if e != nil {
+			errors.Exit(e.Error())
+		}
+		o.Target = string(b)
+	} else if o.URL != "" {
+		o.Target = o.URL
+	} else if o.List != "" {
+		f, e := ioutil.ReadFile(o.List)
+		if e != nil {
+			errors.Exit(e.Error())
+		}
+		o.Target = string(f)
+	} else {
+		errors.Exit("No target input provided.")
+	}
+}
+
+func isStdin() bool {
+	f, e := os.Stdin.Stat()
+	if e != nil {
+		return false
+	}
+
+	if f.Mode()&os.ModeNamedPipe == 0 {
+		return false
+	}
+
+	return true
+}
+
+func isURL(s string) bool {
+	_, e := url.ParseRequestURI(s)
+	if e != nil {
+		return false
+	}
+
+	u, e := url.Parse(s)
+	if e != nil || u.Scheme == "" || u.Host == "" {
+		return false
+	}
+
+	return true
+}

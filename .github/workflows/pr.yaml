@@ -1,0 +1,38 @@
+name: Pull Request
+on:
+  push:
+    paths-ignore:
+      - README.md
+      - .gitignore
+    tags:
+      - v*
+    branches:
+      - master
+      - development
+  pull_request:
+
+jobs:
+  checks:
+    name: Pull Request Checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.14
+
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: GolangCI-Lint
+        uses: golangci/golangci-lint-action@v1
+        with:
+          version: v1.29
+
+      - name: Run tests
+        run: go test .
+        working-directory: cmd/crlfuzz/
+
+      - name: Compile the project
+        run: go build
+        working-directory: cmd/crlfuzz/

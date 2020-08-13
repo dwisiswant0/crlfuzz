@@ -1,0 +1,24 @@
+name: "Auto Close Stale PR & Issues"
+on:
+  schedule:
+  - cron: "0 0 * * *"
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run Stale action
+      uses: actions/stale@v3
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+        stale-issue-message: "This issue won't be fixed & marked as invalid. Closed!"
+        stale-issue-label: "wontfix, invalid"
+        exempt-issue-labels: "bug"
+
+        stale-pr-message: "This PR was abandoned. Closing now."
+        stale-pr-label: "abandoned"
+        exempt-pr-labels: "enhancement"
+
+        days-before-stale: 30
+        days-before-close: 0
