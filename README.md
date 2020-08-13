@@ -227,4 +227,4 @@ If you are still confused or found a bug, please [open the issue](https://github
 
 ## Version
 
-**Current version is 0.0.1** and still development.
+**Current version is 0.0.2** and still development.
