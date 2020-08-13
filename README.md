@@ -1,7 +1,10 @@
-# crlfuzz
+# CRLFuzz
 
-[![License](https://img.shields.io/badge/license-MIT-_red.svg)](https://opensource.org/licenses/MIT)
+[![made-with-Go](https://img.shields.io/badge/made%20with-Go-brightgreen.svg)](http://golang.org)
+[![go-report](https://goreportcard.com/badge/dw1.io/crlfuzz)](https://goreportcard.com/report/dw1.io/crlfuzz)
+[![license](https://img.shields.io/badge/license-MIT-_red.svg)](https://opensource.org/licenses/MIT)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwisiswant0/crlfuzz/issues)
+[![godoc](https://img.shields.io/badge/godoc-reference-brightgreen.svg)](https://godoc.org/dw1.io/crlfuzz)
 
 A fast tool to scan CRLF vulnerability written in Go
 
@@ -204,7 +207,7 @@ func main() {
 
 	// Generates a potentially CRLF vulnerable URLs
 	for _, url := range crlfuzz.GenerateURL(target) {
-		// Scan againts target
+		// Scan against target
 		vuln, err := crlfuzz.Scan(url, method, "", []string{}, "")
 		if err != nil {
 			panic(err)
