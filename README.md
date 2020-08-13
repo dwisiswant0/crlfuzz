@@ -89,7 +89,7 @@ This will display help for the tool. Here are all the switches it supports.
 | -X, --method     	| Specify request method to use _(default: GET)_ 	|
 | -d, --data       	| Define request data                            	|
 | -H, --header     	| Pass custom header to target                   	|
-| -x, --proxy      	| Use proxy to fuzz                              	|
+| -x, --proxy      	| Use specified proxy to fuzz                       |
 | -c, --concurrent 	| Set the concurrency level _(default: 20)_      	|
 | -s, --silent     	| Silent mode                                    	|
 | -v, --verbose    	| Verbose mode                                   	|
@@ -147,7 +147,7 @@ May you want to use custom headers to add cookies or other header parts.
 
 ### Using Proxy
 
-Using a proxy, this can also be useful if Google or other engines meet Captcha.
+Using a proxy, proxy string can be specified with a `protocol://` prefix to specify alternative proxy protocols.
 
 ```bash
 ▶ crlfuzz -u "http://target" -x http://127.0.0.1:8080
