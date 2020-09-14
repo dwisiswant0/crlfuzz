@@ -5,7 +5,7 @@ import (
 	"net/url"
 	"os"
 
-	"dw1.io/crlfuzz/pkg/errors"
+	"github.com/dwisiswant0/crlfuzz/pkg/errors"
 )
 
 func (o *Options) validate() {

@@ -1,10 +1,10 @@
 # CRLFuzz
 
 [![made-with-Go](https://img.shields.io/badge/made%20with-Go-brightgreen.svg)](http://golang.org)
-[![go-report](https://goreportcard.com/badge/dw1.io/crlfuzz)](https://goreportcard.com/report/dw1.io/crlfuzz)
+[![go-report](https://goreportcard.com/badge/github.com/dwisiswant0/crlfuzz)](https://goreportcard.com/report/github.com/dwisiswant0/crlfuzz)
 [![license](https://img.shields.io/badge/license-MIT-_red.svg)](https://opensource.org/licenses/MIT)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwisiswant0/crlfuzz/issues)
-[![godoc](https://img.shields.io/badge/godoc-reference-brightgreen.svg)](https://godoc.org/dw1.io/crlfuzz)
+[![godoc](https://img.shields.io/badge/godoc-reference-brightgreen.svg)](https://godoc.org/github.com/dwisiswant0/crlfuzz)
 
 A fast tool to scan CRLF vulnerability written in Go
 
@@ -45,7 +45,7 @@ A fast tool to scan CRLF vulnerability written in Go
 The installation is easy. You can download a prebuilt binary from [releases page](https://github.com/dwisiswant0/crlfuzz/releases), unpack and run! or with
 
 ```bash
-▶ curl -sSfL dw1.io/crlfuzz.sh | sh -s -- -b /usr/local/bin
+▶ curl -sSfL http://git.io/get-crlfuzz | sh -s -- -b /usr/local/bin
 ```
 
 ### from Source
@@ -53,7 +53,7 @@ The installation is easy. You can download a prebuilt binary from [releases page
 If you have go1.13+ compiler installed and configured:
 
 ```bash
-▶ GO111MODULE=on go get -v dw1.io/crlfuzz/cmd/crlfuzz
+▶ GO111MODULE=on go get -v github.com/dwisiswant0/crlfuzz/cmd/crlfuzz
 ```
 
 In order to update the tool, you can use `-u` flag with go get command.
@@ -198,7 +198,7 @@ package main
 import (
 	"fmt"
 
-	"dw1.io/crlfuzz/pkg/crlfuzz"
+	"github.com/dwisiswant0/crlfuzz/pkg/crlfuzz"
 )
 
 func main() {

@@ -5,8 +5,8 @@ import (
 	"strings"
 	"sync"
 
-	"dw1.io/crlfuzz/pkg/crlfuzz"
-	"dw1.io/crlfuzz/pkg/errors"
+	"github.com/dwisiswant0/crlfuzz/pkg/crlfuzz"
+	"github.com/dwisiswant0/crlfuzz/pkg/errors"
 	"github.com/logrusorgru/aurora"
 )
 

@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"strings"
 
-	"dw1.io/crlfuzz/pkg/request"
+	"github.com/dwisiswant0/crlfuzz/pkg/request"
 )
 
 // Scan will scanning for CRLF vulnerability against target
