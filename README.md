@@ -93,7 +93,7 @@ This will display help for the tool. Here are all the switches it supports.
 | -d, --data       	| Define request data                            	|
 | -H, --header     	| Pass custom header to target                   	|
 | -x, --proxy      	| Use specified proxy to fuzz                       |
-| -c, --concurrent 	| Set the concurrency level _(default: 20)_      	|
+| -c, --concurrent 	| Set the concurrency level _(default: 25)_      	|
 | -s, --silent     	| Silent mode                                    	|
 | -v, --verbose    	| Verbose mode                                   	|
 | -V, --version    	| Show current CRLFuzz version                   	|
@@ -158,10 +158,10 @@ Using a proxy, proxy string can be specified with a `protocol://` prefix to spec
 
 ### Concurrency
 
-Concurrency is the number of fuzzing at the same time. Default value CRLFuzz provide is 20, you can change it by using `-c` flag.
+Concurrency is the number of fuzzing at the same time. Default value CRLFuzz provide is `25`, you can change it by using `-c` flag.
 
 ```bash
-▶ crlfuzz -l /path/to/urls.txt -c 25
+▶ crlfuzz -l /path/to/urls.txt -c 50
 ```
 
 ### Silent
@@ -230,4 +230,4 @@ If you are still confused or found a bug, please [open the issue](https://github
 
 ## Version
 
-**Current version is 0.0.3** and still development.
+**Current version is 1.2.0** and still development.

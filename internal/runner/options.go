@@ -51,8 +51,8 @@ func init() {
 	flag.StringVar(&o.Proxy, "x", "", "")
 	flag.StringVar(&o.Proxy, "proxy", "", "")
 
-	flag.IntVar(&o.Concurrency, "c", 20, "")
-	flag.IntVar(&o.Concurrency, "concurrent", 20, "")
+	flag.IntVar(&o.Concurrency, "c", 25, "")
+	flag.IntVar(&o.Concurrency, "concurrent", 25, "")
 
 	flag.BoolVar(&o.Silent, "s", false, "")
 	flag.BoolVar(&o.Silent, "silent", false, "")
