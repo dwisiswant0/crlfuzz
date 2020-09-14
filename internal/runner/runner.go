@@ -45,6 +45,7 @@ func (options *Options) run(url string) {
 		options.Headers,
 		options.Proxy,
 	)
+	url = strings.Trim(fmt.Sprintf("%q", url), "\"")
 	if e != nil {
 		if !options.Silent {
 			if options.Verbose {
