@@ -1,7 +1,7 @@
 package runner
 
 const (
-  version = "0.0.3"
+  version = "1.2.0"
   author  = "dwisiswant0"
   banner  = `
    _____ _____ __    _____             
