@@ -17,6 +17,7 @@ const (
   -u, --url <URL>           Define single URL to fuzz
   -l, --list <FILE>         Fuzz URLs within file
   -X, --method <METHOD>     Specify request method to use (default: GET)
+  -o, --output <FILE>       File to save results
   -d, --data <DATA>         Define request data
   -H, --header <HEADER>     Pass custom header to target
   -x, --proxy <URL>         Use proxy to fuzz

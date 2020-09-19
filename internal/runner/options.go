@@ -22,10 +22,11 @@ func (h *Headers) Set(val string) error {
 
 // Options defines user args
 type Options struct {
-	URL, List, Method, Data, Proxy, Target string
-	Concurrency                            int
-	Version, Silent, Verbose               bool
-	Headers                                Headers
+	URL, List, Method, Data, Proxy, Target, Saveto string
+	Concurrency                                    int
+	Version, Silent, Verbose                       bool
+	Headers                                        Headers
+	Output                                         *os.File
 }
 
 var o *Options
@@ -41,6 +42,9 @@ func init() {
 
 	flag.StringVar(&o.Method, "X", "GET", "")
 	flag.StringVar(&o.Method, "method", "GET", "")
+
+	flag.StringVar(&o.Saveto, "o", "", "")
+	flag.StringVar(&o.Saveto, "output", "", "")
 
 	flag.StringVar(&o.Method, "d", "", "")
 	flag.StringVar(&o.Method, "data", "", "")
