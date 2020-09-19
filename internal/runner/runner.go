@@ -45,7 +45,9 @@ func (options *Options) run(url string) {
 		options.Headers,
 		options.Proxy,
 	)
+
 	url = strings.Trim(fmt.Sprintf("%q", url), "\"")
+
 	if e != nil {
 		if !options.Silent {
 			if options.Verbose {
@@ -55,11 +57,19 @@ func (options *Options) run(url string) {
 			}
 		}
 	}
+
 	if v {
 		if options.Silent {
 			fmt.Println(url)
 		} else {
 			fmt.Printf("[%s] %s\n", aurora.Green("VLN").String(), aurora.Green(url).String())
+		}
+
+		if options.Output != nil {
+			_, f := options.Output.WriteString(fmt.Sprintf("%s\n", url))
+			if f != nil {
+				errors.Show(f.Error())
+			}
 		}
 	}
 }
