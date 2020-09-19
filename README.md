@@ -90,6 +90,7 @@ This will display help for the tool. Here are all the switches it supports.
 | -u, --url        	| Define single URL to fuzz                      	|
 | -l, --list       	| Fuzz URLs within file                          	|
 | -X, --method     	| Specify request method to use _(default: GET)_ 	|
+| -o, --output     	| File to save results                              |
 | -d, --data       	| Define request data                            	|
 | -H, --header     	| Pass custom header to target                   	|
 | -x, --proxy      	| Use specified proxy to fuzz                       |
@@ -130,6 +131,14 @@ If you want to change it, you can use the `-X` flag.
 
 ```bash
 ▶ crlfuzz -u "http://target" -X "GET"
+```
+
+### Output
+
+You can also save fuzzing results to a file with `-o` flag.
+
+```bash
+▶ crlfuzz -l /path/to/urls.txt -o /path/to/results.txt
 ```
 
 ### Data
@@ -230,4 +239,4 @@ If you are still confused or found a bug, please [open the issue](https://github
 
 ## Version
 
-**Current version is 1.2.0** and still development.
+**Current version is 1.3.0** and still development.
