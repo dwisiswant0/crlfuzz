@@ -62,18 +62,18 @@ execute() {
 }
 get_binaries() {
   case "$PLATFORM" in
-    darwin/386) BINARIES="go-dork" ;;
-    darwin/amd64) BINARIES="go-dork" ;;
-    darwin/arm64) BINARIES="go-dork" ;;
-    darwin/armv6) BINARIES="go-dork" ;;
-    linux/386) BINARIES="go-dork" ;;
-    linux/amd64) BINARIES="go-dork" ;;
-    linux/arm64) BINARIES="go-dork" ;;
-    linux/armv6) BINARIES="go-dork" ;;
-    windows/386) BINARIES="go-dork" ;;
-    windows/amd64) BINARIES="go-dork" ;;
-    windows/arm64) BINARIES="go-dork" ;;
-    windows/armv6) BINARIES="go-dork" ;;
+    darwin/386) BINARIES="crlfuzz" ;;
+    darwin/amd64) BINARIES="crlfuzz" ;;
+    darwin/arm64) BINARIES="crlfuzz" ;;
+    darwin/armv6) BINARIES="crlfuzz" ;;
+    linux/386) BINARIES="crlfuzz" ;;
+    linux/amd64) BINARIES="crlfuzz" ;;
+    linux/arm64) BINARIES="crlfuzz" ;;
+    linux/armv6) BINARIES="crlfuzz" ;;
+    windows/386) BINARIES="crlfuzz" ;;
+    windows/amd64) BINARIES="crlfuzz" ;;
+    windows/arm64) BINARIES="crlfuzz" ;;
+    windows/armv6) BINARIES="crlfuzz" ;;
     *)
       log_crit "platform $PLATFORM is not supported.  Make sure this script is up-to-date and file request at https://github.com/${PREFIX}/issues/new"
       exit 1
@@ -347,10 +347,10 @@ End of functions from https://github.com/client9/shlib
 ------------------------------------------------------------------------
 EOF
 
-PROJECT_NAME="go-dork"
+PROJECT_NAME="crlfuzz"
 OWNER=dwisiswant0
-REPO="go-dork"
-BINARY=go-dork
+REPO="crlfuzz"
+BINARY=crlfuzz
 FORMAT=tar.gz
 OS=$(uname_os)
 ARCH=$(uname_arch)
