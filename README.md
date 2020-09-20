@@ -239,4 +239,4 @@ If you are still confused or found a bug, please [open the issue](https://github
 
 ## Version
 
-**Current version is 1.3.0** and still development.
+**Current version is 1.4.0** and still development.
