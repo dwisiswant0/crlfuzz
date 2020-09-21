@@ -45,7 +45,7 @@ A fast tool to scan CRLF vulnerability written in Go
 The installation is easy. You can download a prebuilt binary from [releases page](https://github.com/dwisiswant0/crlfuzz/releases), unpack and run! or with
 
 ```bash
-▶ curl -sSfL http://git.io/get-crlfuzz | sh -s -- -b /usr/local/bin
+▶ curl -sSfL https://git.io/crlfuzz | sh -s -- -b /usr/local/bin
 ```
 
 ### from Source
