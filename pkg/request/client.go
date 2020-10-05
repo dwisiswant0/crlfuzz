@@ -13,7 +13,7 @@ func Client(p string) *http.Client {
 	tr := &http.Transport{
 		MaxIdleConns:    30,
 		IdleConnTimeout: time.Second,
-		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+		TLSClientConfig: &tls.Config{InsecureSkipVerify: true}, // lgtm [go/disabled-certificate-check]
 		DialContext: (&net.Dialer{
 			Timeout:   time.Second * 30,
 			KeepAlive: time.Second,

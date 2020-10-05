@@ -12,6 +12,9 @@ import (
 func Scan(url string, method string, data string, headers []string, proxy string) (bool, error) {
 	client := request.Client(proxy)
 	req, e := http.NewRequest(method, url, strings.NewReader(data))
+	if e != nil {
+		return false, errors.New(e.Error())
+	}
 	for _, header := range headers {
 		parts := strings.SplitN(header, ":", 2)
 
@@ -20,9 +23,6 @@ func Scan(url string, method string, data string, headers []string, proxy string
 		}
 
 		req.Header.Set(parts[0], parts[1])
-	}
-	if e != nil {
-		return false, errors.New(e.Error())
 	}
 
 	res, e := client.Do(req)
