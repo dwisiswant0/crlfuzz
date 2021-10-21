@@ -36,13 +36,14 @@ func Scan(url string, method string, data string, headers []string, proxy string
 
 func isVuln(r *http.Response) bool {
 	for key, header := range r.Header {
-		if key == "Set-Cookie" {
+		if key == keyHeader {
 			for _, value := range header {
-				if strings.Contains(value, cookie) {
+				if strings.Contains(value, valHeader) {
 					return true
 				}
 			}
 		}
 	}
+
 	return false
 }

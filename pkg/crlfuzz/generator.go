@@ -1,6 +1,9 @@
 package crlfuzz
 
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 // GenerateURL should generate for potential vulnerability URLs
 func GenerateURL(u string) []string {
@@ -12,7 +15,7 @@ func GenerateURL(u string) []string {
 
 	for _, a := range appendList {
 		for _, e := range escapeList {
-			url = append(url, u+a+e+injector)
+			url = append(url, fmt.Sprint(u, a, e, keyHeader, "%3a%20", valHeader))
 		}
 	}
 
