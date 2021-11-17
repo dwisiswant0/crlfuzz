@@ -53,7 +53,7 @@ The installation is easy. You can download a prebuilt binary from [releases page
 If you have go1.13+ compiler installed and configured:
 
 ```bash
-▶ GO111MODULE=on go get -v github.com/dwisiswant0/crlfuzz/cmd/crlfuzz
+▶ GO111MODULE=on go install github.com/dwisiswant0/crlfuzz/cmd/crlfuzz@latest
 ```
 
 In order to update the tool, you can use `-u` flag with go get command.
