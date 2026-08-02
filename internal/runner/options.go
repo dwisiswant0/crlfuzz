@@ -46,8 +46,8 @@ func init() {
 	flag.StringVar(&o.Saveto, "o", "", "")
 	flag.StringVar(&o.Saveto, "output", "", "")
 
-	flag.StringVar(&o.Method, "d", "", "")
-	flag.StringVar(&o.Method, "data", "", "")
+	flag.StringVar(&o.Data, "d", "", "")
+	flag.StringVar(&o.Data, "data", "", "")
 
 	flag.Var(&o.Headers, "header", "")
 	flag.Var(&o.Headers, "H", "")
